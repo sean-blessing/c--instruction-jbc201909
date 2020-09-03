@@ -37,13 +37,19 @@ namespace ProductManager {
             Product product = productsList[1];
 
             Console.WriteLine("Using a Dictionary to store products...");
-            Dictionary<string, Product> productsMap = new Dictionary<string, Product>();
+            Dictionary<string, Product> productsMap = 
+                new Dictionary<string, Product>();
+
             productsMap.Add(p1.Code, p1);
             productsMap.Add(p2.Code, p2);
             productsMap.Add(p3.Code, p3);
 
             string code = MyConsole.GetString("Enter product code to look up:  ");
+
             Console.WriteLine("Product = " + productsMap[code]);
+
+            productsMap.Remove(code);
+
             Console.WriteLine("Bye");
         }
     }
